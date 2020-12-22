@@ -15,6 +15,12 @@ public class MainPage extends BasePageObject {
     @FindBy(xpath="//*[@id='header-details-user-fullname']//img")
     protected WebElement profileImg;
 
+    @FindBy(xpath = "//*[@id='content']//a[2]")
+    private WebElement expandSidebar;
+
+    @FindBy(xpath = "//*[@id='content']/div[1]//header/div/div[2]//a")
+    private WebElement projectName;
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -30,6 +36,22 @@ public class MainPage extends BasePageObject {
     }
 
     public boolean validateLogoutTitle() { return validateIsEnabled(logoutTitle); }
+
+    private boolean projectNameVisible() {
+        return projectName.isDisplayed();
+    }
+
+    public void clickOnExpandSidebar() {
+        press(expandSidebar);
+    }
+
+    public void resetSidebar() {
+        if (!projectNameVisible()) {
+            clickOnExpandSidebar();
+        }
+        waitForVisibility(projectName);
+        logout();
+    }
 
     public void logout() {
         press(profileImg);
