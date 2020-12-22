@@ -9,7 +9,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Parameters;
 import pageObjects.LoginPage;
 import pageObjects.MainPage;
-import utils.Util;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,10 +35,8 @@ public class TestScript {
         mainPage = new MainPage(driver);
 
         login.openBaseUrl();
-        System.setProperty(Util.WEBDRIVER, Util.CHROME_DRIVER_LOCATION);
         mainPage.resetSidebar();
         login.openBaseUrl();
-        System.setProperty(Util.WEBDRIVER, Util.CHROME_DRIVER_LOCATION);
     }
 
     @AfterClass
