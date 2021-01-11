@@ -1,5 +1,22 @@
+#JiraDockerProject
 
-In my project I am going to use chrome and firefox debug containers.
+This project is the jira regression tests implemented in a cross-platform testing used
+docker container platform technology. In my project I use chrome and firefox debug containers.
+
+#Concepts Included:
+
+Page Object pattern
+Keyword driven testing
+Commonly used test utility classes
+
+Selenium Webdriver: Chrome and Chromedriver (UI tests use Chrome by default, can be changed in config)
+Java
+Maven
+
+#Reporting
+ 
+TestScript contains 5 tests, from which 5 passes.
+
 
 ####1. Pull the docker images with the next commands:
 
