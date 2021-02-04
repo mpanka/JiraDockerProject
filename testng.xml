@@ -4,18 +4,18 @@
 
 
     <test name="Chrome Test">
-        <parameter name="browser" value="chrome" />
-        <parameter name="Port" value="9001" />
+        <parameter name="browser" value="chrome"/>
+        <parameter name="Port" value="9001"/>
         <classes>
-            <class name="TestScript" />
+            <class name="TestScript"/>
         </classes>
     </test>
 
     <test name="Firefox Test">
-        <parameter name="browser" value="firefox" />
-        <parameter name="Port" value="9002" />
+        <parameter name="browser" value="firefox"/>
+        <parameter name="Port" value="9002"/>
         <classes>
-            <class name="TestScript" />
+            <class name="TestScript"/>
         </classes>
     </test>
 

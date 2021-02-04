@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends BasePageObject {
 
-    @FindBy(id="log_out")
+    @FindBy(id = "log_out")
     protected WebElement logoutButton;
 
-    @FindBy(xpath="//*[@id='user-options']/a")
+    @FindBy(xpath = "//*[@id='user-options']/a")
     protected WebElement logoutTitle;
 
-    @FindBy(xpath="//*[@id='header-details-user-fullname']//img")
+    @FindBy(xpath = "//*[@id='header-details-user-fullname']//img")
     protected WebElement profileImg;
 
     @FindBy(xpath = "//*[@id='content']//a[2]")
@@ -29,13 +29,17 @@ public class MainPage extends BasePageObject {
         press(profileImg);
     }
 
-    public void pressLogoutButton() { press(logoutButton); }
+    public void pressLogoutButton() {
+        press(logoutButton);
+    }
 
     public boolean validateLogoutButtonIsAvailable() {
         return validateIsEnabled(logoutButton);
     }
 
-    public boolean validateLogoutTitle() { return validateIsEnabled(logoutTitle); }
+    public boolean validateLogoutTitle() {
+        return validateIsEnabled(logoutTitle);
+    }
 
     private boolean projectNameVisible() {
         return projectName.isDisplayed();

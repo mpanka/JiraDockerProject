@@ -40,47 +40,47 @@ public class TestScript {
     }
 
     @AfterClass
-    public void cleanUp () {
+    public void cleanUp() {
         driver.manage().deleteAllCookies();
         driver.quit();
     }
 
-        @Test
-        public void successfulLogin () {
-            login.login();
-            mainPage.pressProfileImage();
-            Assert.assertTrue("logout button should be available", mainPage.validateLogoutButtonIsAvailable());
-            mainPage.pressLogoutButton();
-        }
-
-        @Test
-        public void loginWithoutUserInfos () {
-            login.openBaseUrl();
-            login.pressLoginButton();
-            Assert.assertEquals(login.validateErrorMessage(), "Sorry, your username and password are incorrect - please try again.");
-        }
-
-        @Test
-        public void loginWithoutPassword () {
-            login.openBaseUrl();
-            login.enterValidUsername();
-            login.pressLoginButton();
-            Assert.assertEquals(login.validateErrorMessage(), "Sorry, your username and password are incorrect - please try again.");
-        }
-
-        @Test
-        public void loginWithInvalidPassword () {
-            login.openBaseUrl();
-            login.enterValidUsername();
-            login.enterInvalidPassword();
-            login.pressLoginButton();
-            Assert.assertEquals(login.validateErrorMessage(), "Sorry, your username and password are incorrect - please try again.");
-        }
-
-        @Test
-        public void successfulLogout () {
-            login.login();
-            mainPage.logout();
-            Assert.assertTrue("a login button should be available", mainPage.validateLogoutTitle());
-        }
+    @Test
+    public void successfulLogin() {
+        login.login();
+        mainPage.pressProfileImage();
+        Assert.assertTrue("logout button should be available", mainPage.validateLogoutButtonIsAvailable());
+        mainPage.pressLogoutButton();
     }
+
+    @Test
+    public void loginWithoutUserInfos() {
+        login.openBaseUrl();
+        login.pressLoginButton();
+        Assert.assertEquals(login.validateErrorMessage(), "Sorry, your username and password are incorrect - please try again.");
+    }
+
+    @Test
+    public void loginWithoutPassword() {
+        login.openBaseUrl();
+        login.enterValidUsername();
+        login.pressLoginButton();
+        Assert.assertEquals(login.validateErrorMessage(), "Sorry, your username and password are incorrect - please try again.");
+    }
+
+    @Test
+    public void loginWithInvalidPassword() {
+        login.openBaseUrl();
+        login.enterValidUsername();
+        login.enterInvalidPassword();
+        login.pressLoginButton();
+        Assert.assertEquals(login.validateErrorMessage(), "Sorry, your username and password are incorrect - please try again.");
+    }
+
+    @Test
+    public void successfulLogout() {
+        login.login();
+        mainPage.logout();
+        Assert.assertTrue("a login button should be available", mainPage.validateLogoutTitle());
+    }
+}

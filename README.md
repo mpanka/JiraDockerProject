@@ -1,9 +1,9 @@
-#JiraDockerProject
+# JiraDockerProject
 
 This project is the jira regression tests implemented in a cross-platform testing used
 docker container platform technology. In my project I use chrome and firefox debug containers.
 
-#Concepts Included:
+# Concepts Included:
 
 Page Object pattern
 Keyword driven testing
@@ -13,7 +13,7 @@ Selenium Webdriver: Chrome and Chromedriver (UI tests use Chrome by default, can
 Java
 Maven
 
-#Reporting
+# Reporting
  
 TestScript contains 5 tests, from which 5 passes.
 

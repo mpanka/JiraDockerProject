@@ -7,16 +7,16 @@ import utils.Util;
 
 public class LoginPage extends BasePageObject {
 
-    @FindBy(id="login-form-username")
+    @FindBy(id = "login-form-username")
     protected WebElement username;
 
-    @FindBy(id="login-form-password")
+    @FindBy(id = "login-form-password")
     protected WebElement password;
 
-    @FindBy(id="login")
+    @FindBy(id = "login")
     protected WebElement loginButton;
 
-    @FindBy(id="usernameerror")
+    @FindBy(id = "usernameerror")
     protected WebElement usernameError;
 
     @FindBy(id = "create_link")
@@ -26,15 +26,25 @@ public class LoginPage extends BasePageObject {
         super(driver);
     }
 
-    public String validateErrorMessage() { return validateAssertEquals(usernameError); }
+    public String validateErrorMessage() {
+        return validateAssertEquals(usernameError);
+    }
 
-    public void pressLoginButton() { press(loginButton); }
+    public void pressLoginButton() {
+        press(loginButton);
+    }
 
-    public void openBaseUrl() { goToUrl(Util.BASE_URL); }
+    public void openBaseUrl() {
+        goToUrl(Util.BASE_URL);
+    }
 
-    public void enterValidUsername() { enter(username, Util.USERNAME); }
+    public void enterValidUsername() {
+        enter(username, Util.USERNAME);
+    }
 
-    public void enterInvalidPassword() { enter(password, "badTry"); }
+    public void enterInvalidPassword() {
+        enter(password, "badTry");
+    }
 
     public void login() {
         goToUrl(Util.BASE_URL);

@@ -27,7 +27,7 @@ public class BasePageObject {
         PageFactory.initElements(driver, this);
     }
 
-    public void waitForVisibility(WebElement element) throws Error{
+    public void waitForVisibility(WebElement element) throws Error {
         new WebDriverWait(driver, 7)
                 .until(ExpectedConditions.visibilityOf(element));
     }
@@ -56,7 +56,7 @@ public class BasePageObject {
         maximizeWindow();
     }
 
-    protected void enter(WebElement element, String data){
+    protected void enter(WebElement element, String data) {
         waitForVisibility(element);
         element.clear();
         element.sendKeys(data);
