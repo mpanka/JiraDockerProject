@@ -101,7 +101,8 @@ Time used by single browser runs are similar to the ones in non-debug mode. Wher
 Containers will be stopped. Grid network will be destroyed.
 - $ docker ps
 
-
+#### Observation:
+We need an ubuntu op or a virtual machine in windows to run tests in docker container.
 
 
 

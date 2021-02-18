@@ -45,6 +45,12 @@ public class MainPage extends BasePageObject {
         return projectName.isDisplayed();
     }
 
+    public String getProjectName() {
+        waitForVisibility(projectName);
+        return projectName.getText();
+
+    }
+
     public void clickOnExpandSidebar() {
         press(expandSidebar);
     }

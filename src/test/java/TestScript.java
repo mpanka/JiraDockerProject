@@ -1,5 +1,4 @@
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -7,6 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 import pageObjects.MainPage;
 
@@ -16,13 +16,13 @@ import java.net.URL;
 public class TestScript {
 
     private WebDriver driver;
+    protected String projectName;
 
     LoginPage login;
     MainPage mainPage;
 
     public TestScript() {
     }
-
     @Parameters({"Port"})
     @BeforeClass
     public void initiateDriver(String Port) throws MalformedURLException {
@@ -37,6 +37,7 @@ public class TestScript {
         login.openBaseUrl();
         mainPage.resetSidebar();
         login.openBaseUrl();
+        projectName = mainPage.getProjectName();
     }
 
     @AfterClass
